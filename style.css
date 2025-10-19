@@ -1,0 +1,376 @@
+/* --- Global Styles --- */
+:root {
+    /* --- SOFT PASTEL PALETTE (Coral, Peach, Blush) --- */
+    --primary-color: #FF6B6B; /* Coral/Salmon - Primary branding, links */
+    --secondary-color: #FF9F80; /* Soft Peach - Header background, dark text */
+    --background-color: #FFF8F5; /* Very Light Cream/Pink - Section background for softness */
+    --text-color: #444444; /* Darker text for contrast on light background */
+    --light-text-color: #A38C8C; /* Muted Rose/Gray - Secondary text */
+    --accent-light: #FFDCDC; /* Pale Blush Pink - Subtle highlights */
+    --border-radius: 8px;
+    --shadow-subtle: 0 4px 10px rgba(0, 0, 0, 0.05);
+    --shadow-card: 0 8px 15px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif; 
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fff;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h2 {
+    font-family: 'Lora', Georgia, serif; 
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+section {
+    padding: 80px 0;
+    background-color: var(--background-color);
+}
+
+section:nth-child(even) {
+    background-color: #ffffff; /* Alternating background for distinction */
+}
+
+
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--secondary-color); /* Soft Peach for header */
+    color: white;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-subtle);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-light); /* Pale Blush Pink hover */
+}
+
+
+/* --- Intro Blurb --- */
+.intro-blurb {
+    padding-top: 100px; 
+    padding-bottom: 60px;
+    text-align: justify;
+    background-color: #ffffff;
+}
+
+.intro-blurb p {
+    font-size: 1.25em;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-color);
+    padding: 20px;
+    border-left: 5px solid var(--primary-color);
+    background-color: var(--accent-light);
+}
+
+.intro-blurb strong {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* --- Papers Section (Postcard Style) --- */
+.paper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+}
+
+.paper-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-card);
+    transition: transform 0.3s ease;
+    border-top: 5px solid var(--primary-color); /* Coral top border */
+}
+
+.paper-card:hover {
+    transform: translateY(-5px);
+}
+
+.paper-card h3 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.paper-card h3 a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.paper-card h3 a:hover {
+    text-decoration: underline;
+}
+
+.paper-card .authors {
+    color: var(--light-text-color);
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.paper-card .meta {
+    font-size: 0.95em;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed var(--accent-light); /* Use a softer line */
+    padding-bottom: 15px;
+}
+
+.abstract h4 {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.abstract p {
+    font-size: 0.95em;
+}
+
+/* --- Team Section --- */
+.team-section {
+    background-color: #ffffff;
+}
+
+.team-photo-placeholder {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.team-group-photo {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-card);
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.caption {
+    font-style: italic;
+    color: var(--light-text-color);
+    font-size: 0.9em;
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.member-bio {
+    background-color: var(--accent-light); /* Pale Blush Pink background */
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-subtle);
+}
+
+.member-bio h3 {
+    color: var(--primary-color);
+    font-size: 1.3em;
+    margin-bottom: 5px;
+}
+
+.member-bio .affiliation {
+    color: var(--light-text-color);
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.member-bio p {
+    font-size: 1em;
+}
+
+/* --- Contact Section (Form) --- */
+.contact-section {
+    text-align: center;
+}
+
+.contact-section p {
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-card);
+    text-align: left;
+    border: 1px solid var(--accent-light); /* Softer border */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.submit-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #E05A5A; /* Slightly darker coral for hover */
+}
+
+
+/* --- Footer --- */
+footer {
+    background-color: var(--secondary-color); /* Soft Peach footer */
+    color: white;
+    text-align: center;
+}
+
+/* --- Funding Acknowledgment Section --- */
+.funding-section {
+    /* Uses the light background from your scheme */
+    background-color: var(--background-color); 
+    padding: 60px 0;
+    text-align: center;
+}
+
+.funding-acknowledgment {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    /* Soft border and background to make it stand out */
+    background-color: var(--accent-light); 
+    border: 1px solid #FFDCDC;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-subtle);
+}
+
+.funding-acknowledgment h2 {
+    font-size: 1.8em;
+    margin-bottom: 25px;
+}
+
+.funding-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    text-align: left;
+}
+
+.logo-container {
+    flex-shrink: 0; /* Prevents the logo from shrinking */
+    padding: 5px;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.nsf-logo {
+    /* Adjust size to fit nicely with the text */
+    width: 100px; 
+    height: auto;
+    display: block;
+}
+
+.acknowledgment-text {
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+.acknowledgment-text a {
+    /* Uses your primary color for the link */
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.acknowledgment-text a:hover {
+    text-decoration: underline;
+    color: #E05A5A; /* Slightly darker coral for hover */
+}
+
+/* --- Responsive Adjustments for Funding Section --- */
+@media (max-width: 600px) {
+    .funding-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo-container {
+        margin-bottom: 15px;
+    }
+
+    .acknowledgment-text {
+        font-size: 0.9em;
+    }
+}
